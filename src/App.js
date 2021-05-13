@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/layout/Navbar";
+import { Container } from "react-bootstrap";
+import Body from "./components/layout/Body";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    /* Adding  Dynamic Routing - takes place while routing*/
+    <BrowserRouter>
+      {/* Fluid containers to make it responsive */}
+      <Container fluid>
+        <Navbar />
+        <Body />
+      </Container>
+    </BrowserRouter>
   );
 }
 
