@@ -1,5 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Rubik&display=swap");
 
-.montserrat {
-  font-family: "Montserrat", sans-serif;
+:root {
+  --primary: #e3fdfd;
+  --secondary: #cbf1f5;
+  --misc: #71c9ce;
+
+  --brand-font: "Fredericka the Great", cursive;
+  --heading-font: "Rubik", sans-serif;
+}
+
+#navbar {
+  border-radius: 10px;
+  margin-top: 8px;
+  background-color: var(--secondary) !important;
+}
+
+.navbrand {
+  font-family: var(--brand-font);
+  font-size: 28px;
+}
+
+#basic-navbar-nav {
+  padding-left: 20px;
+}
+
+.nav-links {
+  font-family: var(--heading-font);
+  color: gray !important;
+  font-size: 18px;
+}
+
+.nav-links:hover {
+  text-decoration: none;
+}
+
+.body-container {
+  margin: 30px 10px 0px 10px;
+  padding: 5px;
+}
+
+.text-heading {
+  font-family: var(--heading-font);
+}
+
+.primary {
+  background-color: var(--primary);
+  border: 1px solid var(--misc);
+  box-shadow: 3px 3px #71c9ce;
+}
+
+.secondary {
+  background-color: var(--secondary);
+  border: 1px solid var(--misc);
+  box-shadow: 3px 3px #71c9ce;
 }

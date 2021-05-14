@@ -8,15 +8,15 @@ const Navbarcomp = () => {
   const dispatch = useDispatch();
   return (
     // Adding Bootstrap navbar
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand style={{ fontFamily: "Fugaz One" }}>
-        Pro-Manager
-      </Navbar.Brand>
+    <Navbar bg="light" id="navbar" expand="lg">
+      <Navbar.Brand className="navbrand">ProManager</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto montserrat">
+        <Nav className="mr-auto nav-links">
+          {/* Nav Link to dashboard */}
           <Nav.Link>
             <Link
+              className="nav-links"
               to="/"
               onClick={() => {
                 dispatch(nothing());
@@ -25,9 +25,12 @@ const Navbarcomp = () => {
               Dashboard
             </Link>
           </Nav.Link>
+
+          {/* Nav link to adding project */}
           <Nav.Link>
             <Link
               to="add-project"
+              className="nav-links"
               onClick={() => {
                 dispatch(addproject());
               }}
@@ -36,8 +39,7 @@ const Navbarcomp = () => {
             </Link>
           </Nav.Link>
         </Nav>
-        {}
-        <Nav.Link className="montserrat">Sign In/Out</Nav.Link>
+        <Nav.Link className="nav-links">Sign In/Out</Nav.Link>
       </Navbar.Collapse>
     </Navbar>
   );

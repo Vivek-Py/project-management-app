@@ -1,3 +1,4 @@
+// Reducer for adding project
 const Aproject = (state = false, action) => {
   switch (action.type) {
     case "ADDPROJECT":
