@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components/layout/Navbar";
+import Navbarcomp from "./components/layout/Navbarcomp";
 import { Container } from "react-bootstrap";
 import Body from "./components/layout/Body";
 
@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       {/* Fluid containers to make it responsive */}
       <Container fluid>
-        <Navbar />
+        <Navbarcomp />
         <Body />
       </Container>
     </BrowserRouter>

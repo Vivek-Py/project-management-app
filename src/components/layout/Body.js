@@ -7,7 +7,11 @@ const Body = () => {
   const aproject = useSelector((state) => state.aproject);
 
   // Return AddProject component if true else show dashboard
-  return <div>{aproject ? <AddProject /> : "Showing Dashboard"}</div>;
+  return (
+    <div className="body-switch" data-testid="nav-links">
+      {aproject ? <AddProject /> : "Showing Dashboard"}
+    </div>
+  );
 };
 
 export default Body;
