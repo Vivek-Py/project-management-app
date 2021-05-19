@@ -76,3 +76,67 @@ export const updateDescription = (input) => {
     payload: input,
   };
 };
+
+// For adding email
+export const updateEmail = (input) => {
+  return {
+    type: "ADDEMAIL",
+    payload: input,
+  };
+};
+
+// For adding pass
+export const updatePass = (input) => {
+  return {
+    type: "ADDPASS",
+    payload: input,
+  };
+};
+
+// For adding error
+export const updateError = (input) => {
+  return {
+    type: "ADDERROR",
+    payload: input,
+  };
+};
+
+// For adding  user
+export const updateUser = (input) => {
+  return {
+    type: "ADDUSER",
+    payload: input,
+  };
+};
+
+// For login and signup
+export const updateLogin = () => {
+  return {
+    type: "LOGIN",
+  };
+};
+
+export const updateSignup = () => {
+  return {
+    type: "SIGNUP",
+  };
+};
+
+// For toggling form
+export const toggleFormOn = () => {
+  return {
+    type: "SHOW",
+  };
+};
+
+export const toggleDemoOn = () => {
+  return {
+    type: "TRUE",
+  };
+};
+
+export const toggleDemoOff = () => {
+  return {
+    type: "FALSE",
+  };
+};

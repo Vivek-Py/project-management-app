@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import Navbarcomp from "./components/layout/Navbarcomp";
 import { Container } from "react-bootstrap";
-import Body from "./components/layout/Body";
+import LoggedInOut from "./components/layout/LoggedInOut";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       {/* Fluid containers to make it responsive */}
       <Container fluid>
         <Navbarcomp />
-        <Body />
+        <LoggedInOut />
       </Container>
     </BrowserRouter>
   );

@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
 
 :root {
   --primary: #e3fdfd;
   --secondary: #cbf1f5;
   --misc: #71c9ce;
 
-  --brand-font: "Fredericka the Great", cursive;
+  --error-font: "Fredericka the Great", cursive;
   --heading-font: "Rubik", sans-serif;
+  --navbrand-font: "Reggae One", cursive;
 }
 
 #navbar {
@@ -16,21 +18,23 @@
 }
 
 .navbrand {
-  font-family: var(--brand-font);
+  font-family: var(--navbrand-font);
   font-size: 28px;
+  color: rgb(35, 63, 110) !important;
 }
 
 #basic-navbar-nav {
   padding-left: 20px;
 }
 
-DASHBOARD {
+.nav-links {
   font-family: var(--heading-font);
   color: gray !important;
   font-size: 18px;
+  padding-bottom: 0px;
 }
 
-DASHBOARD:hover {
+.nav-links:hover {
   text-decoration: none;
 }
 
@@ -53,4 +57,22 @@ DASHBOARD:hover {
   background-color: var(--secondary);
   border: 1px solid var(--misc);
   box-shadow: 3px 3px #71c9ce;
+}
+
+.error-img-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.error-img-container > .img {
+  width: 100%;
+}
+
+.error-msg {
+  margin-top: 50px;
+  text-align: center;
+  color: rgb(73, 19, 126);
+  font-family: var(--error-font);
+  font-size: 50px;
 }

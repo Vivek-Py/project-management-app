@@ -1,15 +1,18 @@
 import { Provider } from "react-redux";
 import { mount } from "enzyme";
 
-import store from "../../Store";
-import Navbarcomp from "./Navbarcomp";
+import store from "../../../Store";
+import Navbarcomp from "../Navbarcomp";
 import { Nav, Navbar, NavbarBrand } from "react-bootstrap";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Layout", () => {
   let navWrapper = mount(
-    <Provider store={store}>
-      <Navbarcomp />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <Navbarcomp />
+      </Provider>
+    </BrowserRouter>
   );
 
   it("Navbar Rendering", () => {

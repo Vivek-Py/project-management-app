@@ -7,6 +7,13 @@ import ProjectTitle from "./FormReducers/ProjectTitle";
 import TeamMem from "./FormReducers/TeamMem";
 import Logged from "./Logged";
 import UrgentStatus from "./FormReducers/UrgentStatus";
+import User from "./FirebaseReducers/User";
+import Email from "./FirebaseReducers/Email";
+import Pass from "./FirebaseReducers/Pass";
+import Error from "./FirebaseReducers/Error";
+import Log from "./FirebaseReducers/Log";
+import Toggleform from "./FirebaseReducers/Toggleform";
+import Demo from "./Demo";
 
 // We're combining all the reducers here
 const allReducers = combineReducers({
@@ -18,6 +25,13 @@ const allReducers = combineReducers({
   teammem: TeamMem,
   enddate: EndDate,
   projectdesc: ProjectDesc,
+  user: User,
+  email: Email,
+  pass: Pass,
+  error: Error,
+  log: Log,
+  toggleform: Toggleform,
+  demo: Demo,
 });
 
 export default allReducers;
