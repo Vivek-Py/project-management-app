@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useDispatch } from "react-redux";
-import { updateEmail, updatePass, updateSignup } from "../../state/actions";
+import { updateEmail, updateLogin, updatePass } from "../../state/actions";
 
 const SignUp = (props) => {
   const { handleSignup } = props;
@@ -74,7 +74,7 @@ const SignUp = (props) => {
             <Grid item>
               <Link
                 onClick={() => {
-                  dispatch(updateSignup());
+                  dispatch(updateLogin());
                 }}
                 variant="body2"
               >

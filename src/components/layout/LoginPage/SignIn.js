@@ -14,8 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   toggleDemoOn,
   updateEmail,
-  updateLogin,
   updatePass,
+  updateSignup,
 } from "../../state/actions";
 
 const SignIn = (props) => {
@@ -98,11 +98,11 @@ const SignIn = (props) => {
             <Grid item>
               <Link
                 onClick={() => {
-                  dispatch(updateLogin());
+                  dispatch(updateSignup());
                 }}
                 variant="body2"
               >
-                {"Don't have an account? Sign Up"}
+                Don't have an account? Sign Up
               </Link>
             </Grid>
           </Grid>
