@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fire } from "../auth/Config";
 import { addproject, nothing } from "../state/actions/index";
 
 const Navbarcomp = () => {
@@ -41,15 +42,25 @@ const Navbarcomp = () => {
               >
                 Add Project
               </Nav.Link>
-
-              <Nav.Link className="nav-links" as={Link} to="/">
-                Sign Out
-              </Nav.Link>
             </>
           ) : (
             ""
           )}
         </Nav>
+        {user ? (
+          <Nav.Link
+            className="nav-links"
+            as={Link}
+            to="/"
+            onClick={() => {
+              fire.auth().signOut();
+            }}
+          >
+            Sign Out
+          </Nav.Link>
+        ) : (
+          ""
+        )}
       </Navbar.Collapse>
     </Navbar>
   );

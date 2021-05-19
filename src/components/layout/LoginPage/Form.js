@@ -37,14 +37,6 @@ const Logform = (props) => {
       });
   }
 
-  /*
-
-  function handleLogout() {
-    fire.auth().signOut();
-  }
-
-  */
-
   function handleSignup() {
     fire
       .auth()
