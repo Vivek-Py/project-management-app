@@ -77,17 +77,28 @@
   font-size: 50px;
 }
 
+.MuiListItem-root {
+  justify-content: center;
+  max-width: 280px;
+}
+
 .project-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center !important;
+  gap: 20px;
 }
 
 .urgent-container {
   position: absolute;
-  left: 325px;
+  left: 259px;
   top: 0px;
 }
+
+.icon-color {
+  color: #696161 !important;
+}
+
 /*
  display: grid;
   justify-content: center;

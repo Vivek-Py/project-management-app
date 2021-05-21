@@ -1,4 +1,4 @@
-import { Button, List, ListItem } from "@material-ui/core";
+import { IconButton, List, ListItem } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 
@@ -9,7 +9,10 @@ import CardContent from "@material-ui/core/CardContent";
 
 import Typography from "@material-ui/core/Typography";
 import ScheduleIcon from "@material-ui/icons/Schedule";
-import ImpIcon from "../../img/flag.svg";
+
+import DoneIcon from "@material-ui/icons/Done";
+import DeleteIcon from "@material-ui/icons/Delete";
+import LabelImportantIcon from "@material-ui/icons/LabelImportant";
 
 import { db } from "../auth/Config";
 
@@ -50,11 +53,7 @@ const Dashboard = () => {
                 <Card className={classes.root}>
                   {project.urgentstatus ? (
                     <div className="urgent-container">
-                      <img
-                        src={ImpIcon}
-                        alt="Urgent Icon"
-                        style={{ width: "25px" }}
-                      />
+                      <LabelImportantIcon />
                     </div>
                   ) : (
                     ""
@@ -86,10 +85,24 @@ const Dashboard = () => {
                       {project.projectdesc}
                     </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button disabled size="small">
-                      by {project.projecthead}
-                    </Button>
+                  <CardActions
+                    style={{
+                      justifyContent: "space-evenly",
+                      backgroundColor: "rgb(211, 238, 247)",
+                    }}
+                  >
+                    <Typography>
+                      <p className={classes.phead}>By {project.projecthead}</p>
+                    </Typography>
+                    <IconButton
+                      className="icon-color"
+                      aria-label="mark as done"
+                    >
+                      <DoneIcon />
+                    </IconButton>
+                    <IconButton className="icon-color" aria-label="delete">
+                      <DeleteIcon />
+                    </IconButton>
                   </CardActions>
                 </Card>
               </ListItem>
@@ -120,6 +133,13 @@ const useStyles = makeStyles((theme) => ({
   pos: {
     marginBottom: 12,
   },
+  phead: {
+    verticalAlign: "bottom",
+    color: "#696161",
+    marginBottom: "0px",
+  },
 }));
 
 export default Dashboard;
+
+/**<img src={ImpIcon} alt="Urgent Icon" style={{ width: "25px" }}  /> */
