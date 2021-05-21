@@ -3,7 +3,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fire } from "../auth/Config";
-import { addproject, nothing } from "../state/actions/index";
+import { addproject, dashboard } from "../state/actions/index";
 
 const Navbarcomp = () => {
   const user = useSelector((state) => state.user);
@@ -23,9 +23,8 @@ const Navbarcomp = () => {
                 as={Link}
                 className="nav-links"
                 data-testid="nav-links"
-                to="/"
                 onClick={() => {
-                  dispatch(nothing());
+                  dispatch(dashboard());
                 }}
               >
                 Dashboard
@@ -33,7 +32,6 @@ const Navbarcomp = () => {
 
               <Nav.Link
                 as={Link}
-                to="/add-project"
                 className="nav-links"
                 data-testid="nav-links"
                 onClick={() => {

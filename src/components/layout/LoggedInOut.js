@@ -32,7 +32,6 @@ const LoggedInOut = () => {
                 as={Link}
                 className="nav-links"
                 data-testid="nav-links"
-                to="/signin"
                 style={{ margin: "auto" }}
               >
                 <Button

@@ -5,7 +5,7 @@ export const addproject = () => {
   };
 };
 
-export const nothing = () => {
+export const dashboard = () => {
   return {
     type: "DASHBOARD",
   };

@@ -1,7 +1,10 @@
 import React from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { db, tStamp } from "../auth/Config";
 import {
+  dashboard,
   noturgent,
   updateDate,
   updateDescription,
@@ -9,10 +12,15 @@ import {
   updateTeam,
   updateTitle,
   urgent,
-} from "../state/actions";
+} from "../state/actions/index";
 
 const AddProject = () => {
   const switchState = useSelector((state) => state.urgentstatus);
+  const title = useSelector((state) => state.projectitle);
+  const head = useSelector((state) => state.projecthead);
+  const description = useSelector((state) => state.projectdesc);
+  const teammem = useSelector((state) => state.teammem);
+  const enddate = useSelector((state) => state.enddate);
   const dispatch = useDispatch();
 
   // Function to handle the switch
@@ -26,6 +34,7 @@ const AddProject = () => {
 
   return (
     // Row & Col Bootstrap container to make it center align
+
     <Row className="justify-content-md-center">
       <Col md="auto" className="body-container">
         <Form>
@@ -113,15 +122,25 @@ const AddProject = () => {
           <br />
 
           {/* Button to submit all the details at the end */}
-          <Button
-            variant="primary"
+          <Link
+            className="btn btn-primary"
             type="submit"
             onClick={(e) => {
               e.preventDefault();
+              db.collection("projectlist").add({
+                projecttitle: title,
+                projecthead: head,
+                teammembers: teammem,
+                enddate: enddate,
+                projectdesc: description,
+                urgentstatus: switchState,
+                timestamp: tStamp,
+              });
+              dispatch(dashboard());
             }}
           >
             Submit
-          </Button>
+          </Link>
         </Form>
       </Col>
     </Row>
