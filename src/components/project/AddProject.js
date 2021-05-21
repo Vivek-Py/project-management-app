@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { db, tStamp } from "../auth/Config";
 import {
+  dashboard,
   noturgent,
   updateDate,
   updateDescription,
@@ -31,6 +32,16 @@ const AddProject = () => {
     }
   }
 
+  // Function to clear all the values
+  function clearValues() {
+    dispatch(updateTitle(null));
+    dispatch(updateHead(null));
+    dispatch(updateTeam(1));
+    dispatch(updateDescription(null));
+    dispatch(updateDate(null));
+    dispatch(noturgent());
+  }
+
   return (
     // Row & Col Bootstrap container to make it center align
 
@@ -46,6 +57,7 @@ const AddProject = () => {
               className="primary"
               type="text"
               placeholder="Give your project a name"
+              value={title}
             />
           </Form.Group>
 
@@ -57,6 +69,7 @@ const AddProject = () => {
                 className="secondary"
                 type="text"
                 placeholder="e.g. Mike Tyson"
+                value={head}
                 onChange={(e) => {
                   dispatch(updateHead(e.target.value));
                 }}
@@ -104,6 +117,7 @@ const AddProject = () => {
               as="textarea"
               rows={3}
               placeholder="Describe your project to the members"
+              value={description}
               onChange={(e) => {
                 dispatch(updateDescription(e.target.value));
               }}
@@ -134,7 +148,10 @@ const AddProject = () => {
                 projectdesc: description,
                 urgentstatus: switchState,
                 timestamp: tStamp,
+                stat: "incomplete",
               });
+              dispatch(dashboard());
+              clearValues();
             }}
           >
             Submit

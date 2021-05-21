@@ -11,10 +11,12 @@ import Typography from "@material-ui/core/Typography";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 
 import DoneIcon from "@material-ui/icons/Done";
+import ClearIcon from "@material-ui/icons/Clear";
 import DeleteIcon from "@material-ui/icons/Delete";
 import LabelImportantIcon from "@material-ui/icons/LabelImportant";
 
 import { db } from "../auth/Config";
+import { Clear } from "@material-ui/icons";
 
 const Dashboard = () => {
   const classes = useStyles();
@@ -94,13 +96,36 @@ const Dashboard = () => {
                     <Typography>
                       <p className={classes.phead}>By {project.projecthead}</p>
                     </Typography>
+                    {project.stat === "incomplete" ? (
+                      <IconButton
+                        className="icon-color"
+                        aria-label="mark as done"
+                        onClick={() => {
+                          db.collection("projectlist").doc(project.id).update({
+                            stat: "complete",
+                          });
+                        }}
+                      >
+                        <DoneIcon />
+                      </IconButton>
+                    ) : (
+                      <ClearIcon
+                        className="icon-color"
+                        aria-label="mark as incomplete"
+                        onClick={() => {
+                          db.collection("projectlist").doc(project.id).update({
+                            stat: "incomplete",
+                          });
+                        }}
+                      />
+                    )}
                     <IconButton
                       className="icon-color"
-                      aria-label="mark as done"
+                      aria-label="delete"
+                      onClick={() => {
+                        db.collection("projectlist").doc(project.id).delete();
+                      }}
                     >
-                      <DoneIcon />
-                    </IconButton>
-                    <IconButton className="icon-color" aria-label="delete">
                       <DeleteIcon />
                     </IconButton>
                   </CardActions>
