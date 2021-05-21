@@ -4,15 +4,12 @@ import { mount } from "enzyme";
 import store from "../../../Store";
 import Navbarcomp from "../Navbarcomp";
 import { Nav, Navbar, NavbarBrand } from "react-bootstrap";
-import { BrowserRouter } from "react-router-dom";
 
 describe("Layout", () => {
   let navWrapper = mount(
-    <BrowserRouter>
-      <Provider store={store}>
-        <Navbarcomp />
-      </Provider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <Navbarcomp />
+    </Provider>
   );
 
   it("Navbar Rendering", () => {
@@ -27,6 +24,6 @@ describe("Layout", () => {
 
   it("Nav Links Rendering", () => {
     const body = navWrapper.find(Nav.Link);
-    expect(body).toHaveLength(3);
+    expect(body).toHaveLength(0);
   });
 });

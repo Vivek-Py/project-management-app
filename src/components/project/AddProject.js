@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { db, tStamp } from "../auth/Config";
 import {
-  dashboard,
   noturgent,
   updateDate,
   updateDescription,
@@ -136,7 +135,6 @@ const AddProject = () => {
                 urgentstatus: switchState,
                 timestamp: tStamp,
               });
-              dispatch(dashboard());
             }}
           >
             Submit

@@ -14,6 +14,7 @@ import Error from "./FirebaseReducers/Error";
 import Log from "./FirebaseReducers/Log";
 import Toggleform from "./FirebaseReducers/Toggleform";
 import Demo from "./Demo";
+import Projectlist from "./Projectlist";
 
 // We're combining all the reducers here
 const allReducers = combineReducers({
@@ -32,6 +33,7 @@ const allReducers = combineReducers({
   log: Log,
   toggleform: Toggleform,
   demo: Demo,
+  projectlist: Projectlist,
 });
 
 export default allReducers;

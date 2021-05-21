@@ -76,3 +76,20 @@
   font-family: var(--error-font);
   font-size: 50px;
 }
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center !important;
+}
+
+.urgent-container {
+  position: absolute;
+  left: 325px;
+  top: 0px;
+}
+/*
+ display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+*/

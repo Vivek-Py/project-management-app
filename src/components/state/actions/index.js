@@ -140,3 +140,10 @@ export const toggleDemoOff = () => {
     type: "FALSE",
   };
 };
+
+export const addProjectlist = (projects) => {
+  return {
+    type: "ADDPROJECT",
+    payload: projects,
+  };
+};
