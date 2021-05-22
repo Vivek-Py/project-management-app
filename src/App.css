@@ -99,6 +99,19 @@
   color: #696161 !important;
 }
 
+.card-container {
+  margin-top: 10px;
+  text-align: center;
+  padding: 0px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #10ffb72c !important;
+}
+
+.noti-heading {
+  padding-bottom: 10px;
+  font-family: var(--heading-font) !important;
+}
 /*
  display: grid;
   justify-content: center;

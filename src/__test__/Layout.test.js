@@ -1,8 +1,8 @@
 import { Provider } from "react-redux";
 import { mount } from "enzyme";
 
-import store from "../../../Store";
-import Navbarcomp from "../Navbarcomp";
+import store from "../Store";
+import Navbarcomp from "../components/layout/Navbarcomp";
 import { Nav, Navbar, NavbarBrand } from "react-bootstrap";
 
 describe("Layout", () => {
