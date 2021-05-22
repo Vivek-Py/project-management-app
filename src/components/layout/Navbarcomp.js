@@ -3,7 +3,12 @@ import { Nav, Navbar } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fire } from "../auth/Config";
-import { addproject, dashboard } from "../state/actions/index";
+import {
+  addproject,
+  dashboard,
+  updateEmail,
+  updatePass,
+} from "../state/actions/index";
 
 const Navbarcomp = () => {
   const user = useSelector((state) => state.user);
@@ -51,6 +56,8 @@ const Navbarcomp = () => {
             as={Link}
             to="/"
             onClick={() => {
+              dispatch(updateEmail(null));
+              dispatch(updatePass(null));
               fire.auth().signOut();
             }}
           >

@@ -29,6 +29,7 @@ const SignIn = (props) => {
     dispatch(updateEmail("test@email.com"));
     dispatch(updatePass("testPassword"));
     dispatch(toggleDemoOn());
+    handleLogin();
   }
 
   const classes = useStyles();
