@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
+
+:root {
+  --primary: #e3fdfd;
+  --secondary: #cbf1f5;
+  --misc: #71c9ce;
+
+  --error-font: "Fredericka the Great", cursive;
+  --heading-font: "Rubik", sans-serif;
+  --navbrand-font: "Reggae One", cursive;
+}
+
+#navbar {
+  border-radius: 10px;
+  margin-top: 8px;
+  background-color: var(--secondary) !important;
+}
+
+.navbrand {
+  font-family: var(--navbrand-font);
+  font-size: 28px;
+  color: rgb(35, 63, 110) !important;
+}
+
+#basic-navbar-nav {
+  padding-left: 20px;
+}
+
+.nav-links {
+  font-family: var(--heading-font);
+  color: gray !important;
+  font-size: 18px;
+  padding-bottom: 0px;
+}
+
+.nav-links:hover {
+  text-decoration: none;
+}
+
+.body-container {
+  margin: 30px 10px 0px 10px;
+  padding: 5px;
+}
+
+.text-heading {
+  font-family: var(--heading-font);
+}
+
+.primary {
+  background-color: var(--primary);
+  border: 1px solid var(--misc);
+  box-shadow: 3px 3px #71c9ce;
+}
+
+.secondary {
+  background-color: var(--secondary);
+  border: 1px solid var(--misc);
+  box-shadow: 3px 3px #71c9ce;
+}
+
+.error-img-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.error-img-container > .img {
+  width: 100%;
+}
+
+.error-msg {
+  margin-top: 50px;
+  text-align: center;
+  color: rgb(73, 19, 126);
+  font-family: var(--error-font);
+  font-size: 50px;
+}
+
+.MuiListItem-root {
+  justify-content: center;
+  max-width: 280px;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  gap: 20px;
+}
+
+.urgent-container {
+  position: absolute;
+  left: 259px;
+  top: 0px;
+}
+
+.icon-color {
+  color: #696161 !important;
+}
+
+.card-container {
+  margin-top: 10px;
+  text-align: center;
+  padding: 0px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #10ffb72c !important;
+}
+
+.noti-heading {
+  padding-bottom: 10px;
+  font-family: var(--heading-font) !important;
+}
+/*
+ display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+*/
