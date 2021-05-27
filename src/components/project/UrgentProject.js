@@ -8,7 +8,11 @@ const UrgentProject = (props) => {
 		<Row className="justify-content-md-center">
 			<Card className="card-container priority">
 				<Typography className="noti-heading" variant="h6" component="h2">
-					Projects on priority
+					Projects on priority{" "}
+					<img
+						src="https://img.icons8.com/windows/21/000000/box-important.png"
+						alt="Important Icon"
+					/>
 				</Typography>
 				{projectlist.map((project) => {
 					return (

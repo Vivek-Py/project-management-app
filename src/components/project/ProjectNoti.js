@@ -23,7 +23,12 @@ const ProjectNoti = (props) => {
 		<Row className="justify-content-md-center">
 			<Card className="card-container">
 				<Typography className="noti-heading" variant="h6" component="h2">
-					Recently Added
+					Recently Added{" "}
+					<img
+						src="https://img.icons8.com/windows/21/000000/appointment-reminders.png"
+						alt="Notification Icon"
+						className="noti-icon"
+					/>
 				</Typography>
 				{projectlist.slice(0, 4).map((project) => {
 					return (

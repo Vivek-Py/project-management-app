@@ -20,8 +20,11 @@ import ProjectNoti from "./ProjectNoti";
 import UrgentProject from "./UrgentProject";
 import CompletedProjects from "./CompletedProjects";
 
+import { motion } from "framer-motion";
+
 const Dashboard = () => {
 	const classes = useStyles();
+	const blur = "blur";
 
 	const [projectlist, setprojectlist] = useState([
 		{
@@ -66,7 +69,9 @@ const Dashboard = () => {
 													) : (
 														""
 													)}
-													<CardContent>
+													<CardContent
+														id={project.stat === "complete" ? blur : "clear"}
+													>
 														<Typography
 															className={classes.title}
 															color="textSecondary"
@@ -102,6 +107,24 @@ const Dashboard = () => {
 															backgroundColor: "rgb(211, 238, 247)",
 														}}
 													>
+														{project.stat === "complete" ? (
+															<motion.div
+																initial={{ opacity: 0 }}
+																animate={{ opacity: 1 }}
+																transition={{
+																	duration: 1.5,
+																}}
+															>
+																<img
+																	src="https://img.icons8.com/fluent/100/000000/work-authorisation.png"
+																	alt="Completed Icon"
+																	className="complete-icon"
+																/>
+															</motion.div>
+														) : (
+															""
+														)}
+
 														<Typography>
 															<p className={classes.phead}>
 																By {project.projecthead}
